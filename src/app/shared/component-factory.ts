@@ -17,14 +17,11 @@ export class ComponentFactoryService {
     this.resolver = resolver;
   }
 
-  createComponent(container: ViewContainerRef, type: string): Promise<ComponentRef<any>> {
-    return new Promise(
-      (resolve, reject) => {
+  createComponent(container: ViewContainerRef, type: string): ComponentRef<any>  {
+
         let componentClass = this.registry.getComponentType(type);
         let componentFactory = this.resolver.resolveComponentFactory(componentClass);
-        let component = container.createComponent(componentFactory);
-        resolve(component);
-      }
-    );
+        return container.createComponent(componentFactory);
+
   }
 }

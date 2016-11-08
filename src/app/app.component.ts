@@ -10,6 +10,7 @@ import '../style/app.scss';
 })
 export class AppComponent {
 
+
   constructor() {
     // Do something with api
   }

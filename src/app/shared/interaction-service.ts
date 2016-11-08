@@ -1,16 +1,15 @@
-import {Injectable} from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 import {Http, Response} from '@angular/http';
+import {Output} from '@angular/core/src/metadata/directives';
+import {InteractionEvent} from '../models/InteractionEvent';
 
 
 
 @Injectable()
 export class InteractionService {
 
-  constructor(private http: Http) {
-  }
+  @Output() actionEvent: EventEmitter<InteractionEvent> = new EventEmitter<InteractionEvent>();
 
-  interact(){
-    return this.http.get('url')
-      .map((response: Response) => response.json());
+  constructor(private http: Http) {
   }
 }

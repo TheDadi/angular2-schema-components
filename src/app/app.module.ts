@@ -8,6 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
+import {ComponentFactoryService} from './shared/component-factory';
+import {ComponentRegistry} from './shared/component-registry';
+import {ContainerComponent} from './components/container/container.component';
+import {DefaultComponent} from './components/default/default.component';
+import {FormComponent} from './components/form/form.component';
+import {FormGroupComponent} from './components/form-group/form-group.component';
+import {InteractionService} from './shared/interaction-service';
+import {ContainerLikeComponent} from './components/container-like/container-like.component';
+import {ActionComponent} from './components/action/action-component';
 
 @NgModule({
   imports: [
@@ -18,9 +27,20 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ContainerComponent,
+    DefaultComponent,
+
+  ],
+  entryComponents:[
+    ContainerComponent,
+    DefaultComponent,
+
   ],
   providers: [
+    ComponentFactoryService,
+    InteractionService,
+    ComponentRegistry
   ],
   bootstrap: [AppComponent]
 })

@@ -1,14 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {ContainerLikeComponent} from '../container-like/container-like.component';
 import {ComponentFactoryService} from '../../shared/component-factory';
 
 @Component({
-  selector: 'axa-form',
-  templateUrl: 'form.component.html'
+  selector: 'container',
+  templateUrl: 'container.component.html',
 })
-export class FormComponent extends ContainerLikeComponent {
+export class ContainerComponent extends ContainerLikeComponent{
   constructor(protected componentFactoryService: ComponentFactoryService) {
     super(componentFactoryService)
   }
-
 }
