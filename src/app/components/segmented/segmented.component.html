@@ -1,0 +1,5 @@
+<div class="segmented-control segmented-control--js">
+  <label class="segmented-control__item" *ngFor="let option of options">
+    <input class="segmented-control__item__radio" [(ngModel)]="value" type="radio" value="option.id" name="option.label" /><span class="segmented-control__item__label" [ngClass]="">{{option.label}}</span>
+  </label>
+</div>

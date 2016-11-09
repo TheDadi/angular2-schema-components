@@ -7,8 +7,8 @@ import {ComponentFactoryService} from '../../shared/component-factory';
   templateUrl: 'form.component.html'
 })
 export class FormComponent extends ContainerLikeComponent {
-  constructor(protected componentFactoryService: ComponentFactoryService) {
-    super(componentFactoryService)
+  constructor(){
+    super()
   }
 
 }

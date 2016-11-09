@@ -17,6 +17,9 @@ import {FormGroupComponent} from './components/form-group/form-group.component';
 import {InteractionService} from './shared/interaction-service';
 import {ContainerLikeComponent} from './components/container-like/container-like.component';
 import {ActionComponent} from './components/action/action-component';
+import {DynamicContainerComponent} from "./components/dynamic-container/dynamic-container.component";
+import {InputComponent} from "./components/input/input.component";
+import {SegmentedComponent} from "./components/segmented/segmented.component";
 
 @NgModule({
   imports: [
@@ -24,18 +27,26 @@ import {ActionComponent} from './components/action/action-component';
     HttpModule,
     FormsModule,
     routing
+
   ],
   declarations: [
     AppComponent,
     HomeComponent,
+    DynamicContainerComponent,
     ContainerComponent,
     DefaultComponent,
+    FormGroupComponent,
+    InputComponent,
+    SegmentedComponent
 
   ],
   entryComponents:[
+    DynamicContainerComponent,
     ContainerComponent,
+    FormGroupComponent,
     DefaultComponent,
-
+    InputComponent,
+    SegmentedComponent
   ],
   providers: [
     ComponentFactoryService,

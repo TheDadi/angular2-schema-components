@@ -7,7 +7,7 @@ import {ComponentFactoryService} from '../../shared/component-factory';
   templateUrl: 'container.component.html',
 })
 export class ContainerComponent extends ContainerLikeComponent{
-  constructor(protected componentFactoryService: ComponentFactoryService) {
-    super(componentFactoryService)
+  constructor(){
+    super()
   }
 }

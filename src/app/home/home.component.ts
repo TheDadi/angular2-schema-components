@@ -41,7 +41,7 @@ export class HomeComponent extends ContainerLikeComponent {
   }];
 
 
-  constructor(protected componentFactoryService: ComponentFactoryService) {
-    super(componentFactoryService)
+  constructor() {
+    super()
   }
 }
