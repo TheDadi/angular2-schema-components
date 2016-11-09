@@ -4,6 +4,7 @@ import {FormGroupComponent} from '../components/form-group/form-group.component'
 import {Injectable} from '@angular/core';
 import {InputComponent} from "../components/input/input.component";
 import {SegmentedComponent} from "../components/segmented/segmented.component";
+import {FormComponent} from "../components/form/form.component";
 
 @Injectable()
 export class ComponentRegistry {
@@ -16,6 +17,7 @@ export class ComponentRegistry {
     this.registerComponentType('FormGroup', FormGroupComponent);
     this.registerComponentType('TextField', InputComponent);
     this.registerComponentType('Segmented', SegmentedComponent);
+    this.registerComponentType('Form', FormComponent);
 
   }
 

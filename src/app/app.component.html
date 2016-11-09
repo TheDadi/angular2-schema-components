@@ -1,13 +1,62 @@
-<header>
-  <nav>
-    <a [routerLink]="['']">Home</a>
-  </nav>
+<header class="header">
+  <div class="header__meta">
+    <div class="header__meta__container">
+      <div class="header__meta__row">
+        <ul class="header__meta__item header__meta__item--menu meta-menu">
+          <li class="meta-menu__item"><a class="meta-menu__link" href="#">Individuals</a></li>
+          <li class="meta-menu__item is-active"><a class="meta-menu__link is-active" href="#">Small Business
+            Insurance</a></li>
+          <li class="meta-menu__item"><a class="meta-menu__link" href="#">About Us</a></li>
+        </ul>
+        <div class="header__meta__item header__meta__item--language meta-language"><a class="meta-language__button"
+                                                                                      href="#"
+                                                                                      data-popover="#languageMenu">English</a>
+        </div>
+        <a class="header__meta__item header__meta__item--action">myAXA Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="header__main">
+    <div class="header__main__container">
+      <div class="header__main__row"><a class="header__main__item header__main__item--brand brand" href="#"><img
+        class="brand__image" src="/img/logo.svg" alt="AXA logo"/></a>
+        <ul class="header__main__item header__main__item--menu menu-main">
+          <li class="menu-main__item"><a class="menu-main__link" href="#">Home</a></li>
+        </ul>
+        <div class="header__main__item header__main__item--mobile-actions mobile-actions"><a
+          class="mobile-actions__item" href="#">
+          <svg class="mobile-actions__icon icon">
+            <use xlink:href="/dist/icons.svg#search"></use>
+          </svg>
+        </a><a class="mobile-actions__item site__burger" data-burger="data-burger" href="#">
+          <svg class="mobile-actions__icon icon burger-icon" data-burger="data-burger">
+            <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd">
+              <path class="burger-icon__top" d="M0,5 L24,5"></path>
+              <path class="burger-icon__middle" d="M0,12 L24,12"></path>
+              <path class="burger-icon__bottom" d="M0,19 L24,19"></path>
+            </g>
+          </svg>
+        </a></div>
+      </div>
+    </div>
+  </div>
 </header>
-<main>
-  <h1>Hello from !</h1>
 
-
+<div class="contents">
   <router-outlet></router-outlet>
-</main>
-<footer>
+</div>
+
+<footer class="footer">
+  <div class="footer__main">
+  </div>
+  <div class="footer__copyline footer-copyline">
+    <div class="footer-copyline__container"><span
+      class="footer-copyline__notice">Copyright AXA Versicherungen AG 2015 ©</span>
+      <ul class="footer-copyline__entries">
+        <li class="footer-copyline__item"><a class="footer-copyline__link" href="#">Disclosure</a></li>
+        <li class="footer-copyline__item"><a class="footer-copyline__link" href="#">Usage Hints</a></li>
+        <li class="footer-copyline__item"><a class="footer-copyline__link" href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>

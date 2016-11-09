@@ -37,8 +37,8 @@ import {SegmentedComponent} from "./components/segmented/segmented.component";
     DefaultComponent,
     FormGroupComponent,
     InputComponent,
-    SegmentedComponent
-
+    SegmentedComponent,
+    FormComponent
   ],
   entryComponents:[
     DynamicContainerComponent,
@@ -46,7 +46,8 @@ import {SegmentedComponent} from "./components/segmented/segmented.component";
     FormGroupComponent,
     DefaultComponent,
     InputComponent,
-    SegmentedComponent
+    SegmentedComponent,
+    FormComponent
   ],
   providers: [
     ComponentFactoryService,
