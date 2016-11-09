@@ -109,7 +109,10 @@ module.exports = function makeWebpackConfig() {
       {
         test: /\.css$/,
         exclude: root('src', 'app'),
-        loader: isTest ? 'null' : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css', 'postcss']})
+        loader: isTest ? 'null' : ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css', 'postcss']
+        })
       },
       // all css required in src/app files will be merged in js files
       {test: /\.css$/, include: root('src', 'app'), loader: 'raw!postcss'},
@@ -120,14 +123,17 @@ module.exports = function makeWebpackConfig() {
       {
         test: /\.(scss|sass)$/,
         exclude: root('src', 'app'),
-        loader: isTest ? 'null' : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css', 'postcss', 'sass']})
+        loader: isTest ? 'null' : ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css', 'postcss', 'sass']
+        })
       },
       // all css required in src/app files will be merged in js files
       {test: /\.(scss|sass)$/, exclude: root('src', 'style'), loader: 'raw!postcss!sass'},
 
       // support for .html as raw text
       // todo: change the loader to something that adds a hash to images
-      {test: /\.html$/, loader: 'raw',  exclude: root('src', 'public')}
+      {test: /\.html$/, loader: 'raw', exclude: root('src', 'public')}
     ]
   };
 
@@ -167,11 +173,11 @@ module.exports = function makeWebpackConfig() {
     }),
 
     // Workaround needed for angular 2 angular/angular#11580
-      new webpack.ContextReplacementPlugin(
-        // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        root('./src') // location of your src
-      ),
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      root('./src') // location of your src
+    ),
 
     // Tslint configuration for webpack 2
     new webpack.LoaderOptionsPlugin({
@@ -207,7 +213,7 @@ module.exports = function makeWebpackConfig() {
   ];
 
   if (!isTest && !isProd) {
-      config.plugins.push(new DashboardPlugin());
+    config.plugins.push(new DashboardPlugin());
   }
 
   if (!isTest && !isTestWatch) {
@@ -248,7 +254,7 @@ module.exports = function makeWebpackConfig() {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin({sourceMap: true, mangle: { keep_fnames: true }}),
+      new webpack.optimize.UglifyJsPlugin({sourceMap: true, mangle: {keep_fnames: true}}),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
@@ -264,6 +270,10 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
+    proxy: {
+      '/api': {target: 'http://lxfjet25.dev.axa-ch.intraxa:17000/bpme/axa/rest-api/process-screen/'},
+      secure: false
+    },
     contentBase: './src/public',
     port: 3000,
     historyApiFallback: true,
