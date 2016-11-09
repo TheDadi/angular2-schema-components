@@ -271,7 +271,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.devServer = {
     proxy: {
-      '/api': {target: 'http://lxfjet25.dev.axa-ch.intraxa:17000/bpme/axa/rest-api/process-screen/'},
+      '/api/*': {target: 'http://lxfjet25.dev.axa-ch.intraxa:17000/bpme/axa/rest-api/process-screen/'},
       secure: false
     },
     contentBase: './src/public',
